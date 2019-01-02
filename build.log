@@ -1,0 +1,61 @@
+
+==============================================
+START : FUNC_BUILD_KERNEL
+==============================================
+
+build project=kopen
+build common config=msm8937_sec_defconfig 
+build variant config=msm8937_sec_gta2swifi_sea_open_defconfig 
+build secure option= 
+build SEANDROID option= 
+build selinux defconfig=selinux_defconfig 
+build selinux log defconfig=selinux_log_defconfig 
+build tima defconfig= 
+no directory : /root/stockSource/src/Kernel/../../android/out/target/product/gta2swifidx/obj/KERNEL_OBJ/arch/arm/boot/dts
+make: Entering directory '/root/stockSource/src/Kernel'
+make[1]: Entering directory '/root/stockSource/android/out/target/product/gta2swifidx/obj/KERNEL_OBJ'
+  HOSTCC  scripts/basic/fixdep
+  GEN     ./Makefile
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTCC  scripts/kconfig/zconf.tab.o
+In file included from /root/stockSource/src/Kernel/scripts/kconfig/zconf.tab.c:2534:
+/root/stockSource/src/Kernel/scripts/kconfig/confdata.c: In function ‘conf_write’:
+/root/stockSource/src/Kernel/scripts/kconfig/confdata.c:769:19: warning: ‘%s’ directive writing likely 7 or more bytes into a region of size between 1 and 4097 [-Wformat-overflow=]
+  sprintf(newname, "%s%s", dirname, basename);
+                   ^~~~~~
+/root/stockSource/src/Kernel/scripts/kconfig/confdata.c:769:19: note: assuming directive output of 7 bytes
+In file included from /usr/include/stdio.h:873,
+                 from /root/stockSource/src/Kernel/scripts/kconfig/zconf.tab.c:84:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:36:10: note: ‘__builtin___sprintf_chk’ output 1 or more bytes (assuming 4104) into a destination of size 4097
+   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       __bos (__s), __fmt, __va_arg_pack ());
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/stockSource/src/Kernel/scripts/kconfig/zconf.tab.c:2534:
+/root/stockSource/src/Kernel/scripts/kconfig/confdata.c:772:20: warning: ‘.tmpconfig.’ directive writing 11 bytes into a region of size between 1 and 4097 [-Wformat-overflow=]
+   sprintf(tmpname, "%s.tmpconfig.%d", dirname, (int)getpid());
+                    ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/stdio.h:873,
+                 from /root/stockSource/src/Kernel/scripts/kconfig/zconf.tab.c:84:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:36:10: note: ‘__builtin___sprintf_chk’ output between 13 and 4119 bytes into a destination of size 4097
+   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       __bos (__s), __fmt, __va_arg_pack ());
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  HOSTLD  scripts/kconfig/conf
+drivers/soc/qcom/Kconfig:1007:warning: ignoring type redefinition of 'TIMA_LOG' from 'tristate' to 'boolean'
+drivers/battery_v2/Kconfig:784:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:85:warning: ignoring type redefinition of 'SAMSUNG_BATTERY_ENG_TEST' from 'boolean' to 'tristate'
+drivers/battery_v2_legacy/Kconfig:703:warning: ignoring type redefinition of 'BATTERY_AGE_FORECAST' from 'boolean' to 'tristate'
+drivers/input/touchscreen/Kconfig:14:warning: config symbol defined without type
+***
+*** Can't find default configuration "arch/arm/configs/msm8937_sec_defconfig"!
+***
+make[2]: *** [/root/stockSource/src/Kernel/scripts/kconfig/Makefile:137: msm8937_sec_defconfig] Error 1
+make[1]: *** [/root/stockSource/src/Kernel/Makefile:546: msm8937_sec_defconfig] Error 2
+make[1]: Leaving directory '/root/stockSource/android/out/target/product/gta2swifidx/obj/KERNEL_OBJ'
+make: *** [Makefile:145: sub-make] Error 2
+make: Leaving directory '/root/stockSource/src/Kernel'
+
+[0;31m#### failed to build some targets (3 seconds) ####[00m
+
