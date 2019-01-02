@@ -65,9 +65,9 @@ export KCONFIG_NOTIMESTAMP=true
 export ARCH=arm64;
 export SUB_ARCH=arm64;
 
-# G920T
-if [ "$TARGET" = "G920T" ] ; then
-	export KERNEL_CONFIG="custom_defconfig";
+# gta2swifi
+if [ "$TARGET" = "gta2swifi" ] ; then
+	export KERNEL_CONFIG="msm8937_defconfig";
 fi;
 
 # G925T
